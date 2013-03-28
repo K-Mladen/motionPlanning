@@ -1,0 +1,19 @@
+<package>
+  <description brief="motionPlanning">
+
+     motionPlanning
+
+  </description>
+  <author>RoboCode</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/motionPlanning</url>
+  <depend package="roscpp"/>
+  <depend package="ompl_ros_interface"/>
+  <depend package="rospy"/>
+  <!--depend package="actionlib"/-->
+  <!--depend package="arm_navigation_msgs"/-->
+  <!--depend package="planning_environment"/-->
+</package>
+
+
