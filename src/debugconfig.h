@@ -1,0 +1,3 @@
+#ifndef DEBUGCONFIG-H
+#define DEBUGCONFIG-H
+#endif //DEBUGCONFIG-H
