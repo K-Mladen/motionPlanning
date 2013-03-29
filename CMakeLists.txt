@@ -30,3 +30,4 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 #rosbuild_add_executable(ompl_joint_goal src/ompl_joint_goal.cpp)
+rosbuild_add_executable(ompl_joint_goal src/main.cpp)

@@ -5,7 +5,7 @@
 -->
 
 <robot name="Capstone">
-  <link name="base">
+  <link name="robot">
     <collision>
       <geometry>
 	    <box size="0.3 0.3 0.3 " />
@@ -34,14 +34,14 @@
     <collision>
 	  <geometry>
 	    <!--mesh filename="stuff.stl" /-->
-		<box size="0.5 0.5 0.5" />
+		<box size="0.07 0.04 0.3" />
 	  </geometry>
 	</collision>
   </link>
 
 
   <joint name="shoulder" type="revolute">
-    <parent link="base" />
+    <parent link="robot" />
 	<child link="bicep" />
 	<limit lower="0" upper="3.665" effort="30" velocity="30" />
 	<origin xyz="0 0 0.0776 " rpy="0 0 0" />
