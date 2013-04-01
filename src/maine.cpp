@@ -17,9 +17,14 @@ void localPlan(const std::vector<geometry_msgs::poseStamped> & globalPlan,const 
   
   base_local_planner::TrajectoryPlannerROS skipper("skipper",transforms,theCostMap);
   skipper.setPlan(globalPlan);
+  
+  
   while(!skipper.isGoalReached()){
-    //TODO
+    skipper.computeVelocityCommands(currentTwist);    
+	//TODO is there a way to make sure we don't have an infinte loop?
   }
+
+
 
 }
 
@@ -69,12 +74,14 @@ int main(int argc, char* argv[]) {
     }
   } 
 
-
+  costmap_2d::Costmap2DROS CompositeCostmap;
+  //ros::ServiceClient getCostmap = n.serviceClient<costmap2d::Costmap2DROS  
 
   double holder, goal;
   geometry_msgs::Point currentLocation, goalLocation;
-  NavfnROS navigator;
-  
+  NavfnROS navigator("CapstoneGlobalPlanner", CompositeCostmap);
+  std::vector<geometry_msgs::PoseStamped> globalPlan;
+
   currentLocation.x = 0.4;
   currentLocation.y = 0.4;
   currentLocation.z = 0.3;
